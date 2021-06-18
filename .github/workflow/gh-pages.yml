@@ -18,28 +18,18 @@ jobs:
       - uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-wechaty.js.org-${{ hashFiles('**/package.json', 'jekyll/Gemfile') }}
+          key: ${{ runner.os }}-botbay.ml-${{ hashFiles('**/package.json') }}
           restore-keys: |
-            ${{ runner.os }}-wechaty.js.org-
-      - name: Bundle Config
-        run: |
-          sudo gem install bundler
-          # bundle config path ~/.npm/bundle
+            ${{ runner.os }}-botbay.ml-
 
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: NPM Install
         run: npm install
-      - name: Debug
-        run: |
-          git log --since="1 week ago" --name-only --pretty=format: | sort | uniq
-          git log --since="1 week ago" --name-only --pretty=format: | sort | uniq | wc -l
-      - name: NPM Test
-        run: npm test
-      - name: Install Dependencies
-        run: make install
+      # - name: NPM Test
+      #   run: npm test
       - name: Build
         run: npm run build
 
@@ -54,9 +44,9 @@ jobs:
     - uses: actions/cache@v2
       with:
         path: ~/.npm
-        key: ${{ runner.os }}-wechaty.js.org-${{ hashFiles('**/package.json', 'jekyll/Gemfile') }}
+        key: ${{ runner.os }}-botbay.ml-${{ hashFiles('**/package.json', 'jekyll/Gemfile') }}
         restore-keys: |
-          ${{ runner.os }}-wechaty.js.org-
+          ${{ runner.os }}-botbay.ml-
     - name: Bundle Cache Config
       run: |
         sudo gem install bundler
