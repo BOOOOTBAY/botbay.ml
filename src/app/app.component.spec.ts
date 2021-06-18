@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'spacle-ng'`, () => {
+  it(`should have as title 'botbay.ml'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('spacle-ng');
+    expect(app.title).toEqual('botbay.ml');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('spacle-ng app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('botbay.ml app is running!');
   });
 });
