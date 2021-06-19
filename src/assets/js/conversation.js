@@ -3,7 +3,7 @@
     var chatMessages = [
         {
             name: "ms1",
-            msg: "👋Hi​! I'm a Spacle. Let me know if you have any questions regarding our tool or set up a demo to learn more!",
+            msg: "👋Hi​! I'm from BotBay! Nothing so special before I met you here! Will you please give me a name?",
             delay: 300,
             align: "right",
             showTime: true,
@@ -12,7 +12,7 @@
         },
         {
             name: "ms2",
-            msg: "Ask a Question",
+            msg: "What about Valley?",
             delay: 3000,
             align: "left",
             showTime: true,
@@ -21,7 +21,7 @@
         },
         {
             name: "ms3",
-            msg: "Sure! Ask me anything!",
+            msg: "Oh sweet, I like my name!",
             delay: 3000,
             align: "right",
             showTime: true,
