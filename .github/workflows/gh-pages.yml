@@ -16,7 +16,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: 14
       - name: NPM Install
         run: npm install
       # - name: NPM Test
@@ -35,10 +35,10 @@ jobs:
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 16
+        node-version: 14
     - name: Install dependencies
       run: |
-        npm install
+        npm ginstall
     - name: Config Git
       run: |
         git config --global user.name 'Huan @ GitHub Action'
