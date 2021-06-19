@@ -38,7 +38,7 @@ jobs:
         node-version: 14
     - name: Install dependencies
       run: |
-        npm ginstall
+        npm install
     - name: Config Git
       run: |
         git config --global user.name 'Huan @ GitHub Action'
