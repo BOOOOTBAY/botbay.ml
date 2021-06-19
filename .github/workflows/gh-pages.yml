@@ -36,6 +36,9 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: 16
+    - name: Install dependencies
+      run: |
+        npm install
     - name: Config Git
       run: |
         git config --global user.name 'Huan @ GitHub Action'
@@ -46,9 +49,6 @@ jobs:
         git reset --hard
         git commit --allow-empty -m "Orphan init"
         git checkout main
-    - name: Install dependencies
-      run: |
-        make install
     - name: Bind git worktree with dist/spacle-ng folder and gh-pages branch
       run: |
         rm -fr gh-pages
