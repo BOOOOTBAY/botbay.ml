@@ -13,15 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # https://github.community/t/solved-workflows-and-git-logs/121289
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-botbay.ml-${{ hashFiles('**/package.json') }}
-          restore-keys: |
-            ${{ runner.os }}-botbay.ml-
-
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
@@ -41,12 +32,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-botbay.ml-${{ hashFiles('**/package.json') }}
-        restore-keys: |
-          ${{ runner.os }}-botbay.ml-
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
@@ -81,7 +66,7 @@ jobs:
         popd
     - name: Unbind gh-pages folder from gh-pages branch
       run: |
-        git worktree remove dist/spacle-ng
+        git worktree remove gh-pages
         git branch -D gh-pages
-        rm -fr dist/spacle-ng
+        rm -fr gh-pages
 
