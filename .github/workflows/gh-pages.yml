@@ -66,19 +66,20 @@ jobs:
         make install
     - name: Bind git worktree with dist/spacle-ng folder and gh-pages branch
       run: |
-        rm -fr dist/spacle-ng
-        git worktree add dist/spacle-ng gh-pages
-    - name: Build and copy all homepage files to dist/spacle-ng/ together
+        rm -fr gh-pages
+        git worktree add gh-pages gh-pages
+    - name: Build
       run: |
         npm run build
-    - name: Deploy dist/spacle-ng
+        mv dist/spacle-ng/* gh-pages
+    - name: Deploy
       run: |
-        pushd dist/spacle-ng
+        pushd gh-pages
         git add --all
         git commit -m "$(jq -r .version ../package.json)"
         git push -f origin gh-pages
         popd
-    - name: Unbind dist/spacle-ng folder from gh-pages branch
+    - name: Unbind gh-pages folder from gh-pages branch
       run: |
         git worktree remove dist/spacle-ng
         git branch -D gh-pages
