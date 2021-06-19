@@ -57,6 +57,7 @@ jobs:
       run: |
         npm run build
         mv dist/spacle-ng/* gh-pages
+        echo beta.botbay.ml > gh-pages/CNAME
     - name: Deploy
       run: |
         pushd gh-pages
